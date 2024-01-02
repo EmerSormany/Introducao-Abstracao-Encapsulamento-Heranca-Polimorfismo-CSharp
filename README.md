@@ -1,5 +1,6 @@
-# Introducao-Abstra-o-Encapsulamento-C-
-Este repositório é um resumo da aula sobre Abstração e Encapsulamento do Bootcamp Decola Tech 2024 da DIO.me
+# Introducao-Abstra-o-Encapsulamento-Heranca-Polimorfismo-CSharp
+
+Este repositório é um resumo da aula sobre Abstração, Encapsulamento, Herança e Polimorfismo em C# do Bootcamp Decola Tech 2024 da DIO.me
 
 ## Introdução a Abstração e Encapsulamento em C#
 
