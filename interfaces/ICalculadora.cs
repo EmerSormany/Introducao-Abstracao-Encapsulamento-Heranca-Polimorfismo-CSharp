@@ -13,7 +13,7 @@ namespace Introducao_Abstracao_Encapsulamento_CSharp.interfaces
         // métodos com escopo tem sua implemetação opcional
         decimal Dividir(int num1, int num2)
         {
-            return num1 / num2;
+            return (decimal)num1 / num2;
         }
     }
 }
