@@ -5,6 +5,8 @@ Este repositório é um resumo das aulas sobres:
  * Herança e Polimorfismo
  * Classes Abstratas e Interfaces com C#
 
+O código possui comentários
+
 ## Introdução a Abstração e Encapsulamento em C#
 
 Explorando o paradigma da programação orientada a objetos.
