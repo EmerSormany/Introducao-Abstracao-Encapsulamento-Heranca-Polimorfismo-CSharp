@@ -1,6 +1,9 @@
-# Introducao-Abstra-o-Encapsulamento-Heranca-Polimorfismo-CSharp
+# Introducao a Abstração, Encapsulamento, Herança, Polimorfismo, Classes Abstratas e Interfaces em C#
 
-Este repositório é um resumo da aula sobre Abstração, Encapsulamento, Herança e Polimorfismo em C# do Bootcamp Decola Tech 2024 da DIO.me
+Este repositório é um resumo das aulas sobres:
+ * Abstração e Encapsulamento
+ * Herança e Polimorfismo
+ * Classes Abstratas e Interfaces com C#
 
 ## Introdução a Abstração e Encapsulamento em C#
 
@@ -122,3 +125,100 @@ Neste segundo caso, são definidos métodos com o mesmo nome, mas com número de
 Para ver os exemplos, navegue pelos arquivos das classes no diretório Models e na classe Program.cs.
 
 Faça um clone deste repositório e execute o comando 'dotnet run' para ver os exemplos na prática.
+
+## Classes Abstratas e Interfaces Em C#
+
+### Classe Abstrata
+
+Uma classe abstrata tem como objetivo ser exclusivamente um modelo para ser herdado, portanto, não pode ser instanciada.
+
+Você pode implementar métodos ou deixá-los a cargo de quem herdar.
+
+ * Sintaxe de uma classe abstrata:
+
+namespace Exemplo.Models
+{
+
+    public abstract class ClasseAbstrata
+    {
+        // Métodos e Propriedades da classe
+    }
+
+}
+
+Com a palavra reservada 'abstract' na definição da classe, você indica que a classe não pode ser instanciada e apenas herdada. Também é possível utilizar essa palavra na definição de métodos abstratos e todo método criado como abstrato precisa ser implementado na classe filha, utilizando a palavra reservada 'override'.
+
+É possível criar propriedades com a palavra reservada 'protected' em suas definições. Essa palavra indica que apenas classes filhas podem alterar o valor dessa propriedade.
+
+### Classe Selada
+
+Uma classe selada tem como objetivo impedir que outras classes façam herança dela, ou seja, nenhuma classe pode ser sua filha.
+
+Também é possível ter métodos e propriedades seladas. Quando isso ocorre, impede que a classe filha possa sobrescrever métodos ou alterar e consultar valores de propriedades herdadas.
+
+ * Exemplo de sintaxe de classe selada:
+
+namespace Exemplo.Models
+{
+
+    public sealed class ClasseSelada
+    {
+        // Métodos e Propriedades da classe
+    }
+
+}
+
+Assim, nenhuma classe pode ser filha dessa classe selada.
+
+ * Exemplo de sintaxe de método selado:
+
+namespace Exemplo.Models
+{
+
+    public class ClasseQueHerda : ClasseQueDoa 
+    {
+        public sealed override void Metodo()
+        {
+            // Implementação
+        }
+    }
+
+}
+
+Dessa forma, é possível herdar e criar uma nova filha da ClasseQueHerda, mas o seu método está selado e não pode ser sobrescrito pela classe filha. O comportamento será o mesmo do implementado na ClasseQueHerda.
+
+### Classe Object
+
+A classe System.Object é a mãe de todas as classes na hierarquia do .NET.
+
+Todas as classes derivam, direta ou indiretamente, da classe Object. Ela tem como objetivo prover serviços de baixo nível para suas classes filhas.
+
+Todas as outras classes criadas pelo programador herdam da Object vários métodos como ToString, Finalize, GetType, entre outros.
+
+### Interfaces
+
+Uma interface é um contrato que pode ser implementado por uma classe.
+
+É como se fosse uma classe abstrata, podendo definir métodos abstratos para serem implementados.
+
+Assim como uma classe abstrata, uma interface não pode ser instanciada.
+
+O nome de uma interface sempre é iniciado com 'I'. Uma classe não herda de uma interface, mas sim a implementa.
+
+Com interfaces, uma classe pode implementar várias interfaces ao mesmo tempo. Diferente da herança, que não existe o conceito de múltiplas heranças em C#.
+
+Em uma interface não são usados os modificadores de acesso, como 'public', apenas o tipo do retorno do método é usado. Os métodos podem possuir escopo ou não. Para os métodos sem escopo, se faz obrigatória sua implementação na classe que implementa a interface, pois são apenas modelos. Já no métodos que possuem escopo dentro da interface, sua implementação na classe é opcional.
+
+ * Sintaxe de uma classe implementando uma interface:
+
+namespace Exemplo.Models
+{
+
+    public class Calculadora : ICalculadora
+    {
+        // implementar métodos da interface
+    }
+
+}
+
+Uma interface não pode ser instanciada, mas pode receber uma instância da classe que a implementa, tornando suas operações válidas.
