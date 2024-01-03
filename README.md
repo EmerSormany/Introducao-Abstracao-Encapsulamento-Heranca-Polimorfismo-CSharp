@@ -73,9 +73,12 @@ Para fazer uma classe herdar atributos de outra, inclui-se dois pontos (:) ao fi
  * Exemplo de sintaxe:
 
 namespace NomeDoProjeto.Models
+
+
 {
+
     public class ClasseQueHerda : ClasseQueDoa
-    {
+    {  
         // métodos e propriedades
     }
 }
