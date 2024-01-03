@@ -1,9 +1,16 @@
 using System;
+using Introducao_Abstracao_Encapsulamento_CSharp.interfaces;
 
 namespace Introducao_Abstracao_Encapsulamento_CSharp.Models
 {
-    public class Calculadora
+    public class Calculadora : ICalculadora // Implementação da interface ICalculadora
     {
+        // métodos obrigatoriamente implementados
+        // método Dividir não precisou ser implementado
+        public int Multiplicar(int num1, int num2)
+        {
+            return num1 * num2;
+        }
 
         // Exemplos de polimorfismo em tempo de compilação
 
@@ -24,5 +31,11 @@ namespace Introducao_Abstracao_Encapsulamento_CSharp.Models
             Console.WriteLine("Somar 4 números");
             return num1 + num2 + num3 + num4;
         }
+
+        public int Subtrair(int num1, int num2)
+        {
+            return num1 - num2;
+        }
+
     }
 }
